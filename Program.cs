@@ -39,18 +39,7 @@ bool RemoveTaskAtSafe(List<string> tasks, int index)
     }
 }
 
-int CountTask(List<string> tasks, string title)
-{
-    int c = 0;
-    foreach (string t1 in tasks)
-    {
-        if (title == t1)
-        {
-            c += 1;
-        }
-    }
-    return c;
-}
+
 
 // List<string> searchableTasks = new List<string> { "Код", "Тест", "Код" };
 // int index = searchableTasks.IndexOf("План");
@@ -68,7 +57,18 @@ int CountTask(List<string> tasks, string title)
 // clearedTasks.Clear();
 // Console.WriteLine(clearedTasks.Count);
 // PrintTasks(clearedTasks);
-
+int CountTask(List<string> tasks, string title)
+{
+    int c = 0;
+    foreach (string t1 in tasks)
+    {
+        if (title == t1)
+        {
+            c += 1;
+        }
+    }
+    return c;
+}
 Console.Write("Сколько задач добавить сначала: ");
 int count = Convert.ToInt32(Console.ReadLine());
 
@@ -133,4 +133,3 @@ Console.WriteLine(">>> Итоговый список дел <<<");
 Console.WriteLine();
 Console.WriteLine($"Количество задач: {tasks.Count}");
 PrintTasks(tasks);
-
